@@ -41,6 +41,22 @@ function startServer(port) {
     res.send(responseMessage);
   });
 
+  app.get('/fail', (req, res) => {
+    // Get query parameters
+    const requestQuery = req.query;
+    const requestProbability = +requestQuery['probability'];
+  
+    // Calculate the probability
+    let statusCode = 200;
+    if (Math.random() < (requestProbability / 100)) {
+      statusCode = 500;
+    }
+  
+    // Sending the response
+    res.statusCode = statusCode;
+    res.send(`Status code is ${statusCode}`);
+  });
+
   function getTimestamp() {
     const dateNow = new Date();
     const timestamp = dateNow.getTime();
