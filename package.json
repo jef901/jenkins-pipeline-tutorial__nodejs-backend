@@ -10,5 +10,8 @@
     "type": "git",
     "url": "git+https://github.com/jef901/jenkins-pipeline-tutorial__nodejs-backend.git"
   },
-  "author": "pepe"
+  "author": "pepe",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
 }
