@@ -47,4 +47,4 @@ function startServer(port) {
     return timestamp;
   }
 
- 
+ module.exports = {startServer, app};
